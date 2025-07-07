@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react"
 const socialLinks = [
   {
     name: "Instagram",
-    url: "https://instagram.com/devenhuang",
+    url: "https://www.instagram.com/d.huang05/",
     description: "Personal photos and updates",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -13,7 +13,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/devenhuang",
+    url: "https://linkedin.com/in/deven-huang",
     description: "Professional network",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -23,7 +23,7 @@ const socialLinks = [
   },
   {
     name: "Letterboxd",
-    url: "https://letterboxd.com/devenhuang",
+    url: "https://letterboxd.com/Hades3405/",
     description: "Film reviews and ratings",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -33,7 +33,7 @@ const socialLinks = [
   },
   {
     name: "Goodreads",
-    url: "https://goodreads.com/devenhuang",
+    url: "https://www.goodreads.com/user/show/165965477-deven-huang",
     description: "Book reviews and reading",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -43,7 +43,7 @@ const socialLinks = [
   },
   {
     name: "Beli",
-    url: "https://beli.app/devenhuang",
+    url: "https://beliapp.co/app/dhuang05",
     description: "Restaurant recommendations",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -53,7 +53,7 @@ const socialLinks = [
   },
   {
     name: "Strava",
-    url: "https://strava.com/athletes/devenhuang",
+    url: "https://www.strava.com/athletes/48192428",
     description: "Running and fitness tracking",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -63,7 +63,7 @@ const socialLinks = [
   },
   {
     name: "Substack",
-    url: "https://devenhuang.substack.com",
+    url: "https://dhuang05.substack.com/",
     description: "Personal thoughts and writing",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -73,7 +73,7 @@ const socialLinks = [
   },
   {
     name: "ORCID",
-    url: "https://orcid.org/0000-0000-0000-0000",
+    url: "https://orcid.org/0009-0004-4482-8448",
     description: "Academic research profile",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">

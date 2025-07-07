@@ -8,7 +8,7 @@ const friendsData = [
     name: "David Garsten",
     description:
       "Computer Science student at MIT with a passion for AI and machine learning. Currently working on neural network optimization and computer vision projects.",
-    website: "https://davidgarsten.com",
+    website: "https://dudugan.github.io",
     image: "/placeholder.svg?height=200&width=200",
     skills: ["Machine Learning", "Computer Vision", "Python", "Research"],
   },
@@ -17,7 +17,7 @@ const friendsData = [
     name: "Sidharth Rao",
     description:
       "Economics and Mathematics double major at Harvard University. Interested in quantitative finance and economic modeling with a focus on market analysis.",
-    website: "https://sidharthrao.com",
+    website: "https://iamsrao.com/",
     image: "/placeholder.svg?height=200&width=200",
     skills: ["Economics", "Mathematics", "Finance", "Data Analysis"],
   },
@@ -26,7 +26,7 @@ const friendsData = [
     name: "Jewon Im",
     description:
       "Biomedical Engineering student at Johns Hopkins University. Researching medical device innovation and tissue engineering applications.",
-    website: "https://jewonim.com",
+    website: "https://jewonim.com/",
     image: "/placeholder.svg?height=200&width=200",
     skills: ["Biomedical Engineering", "Research", "Medical Devices", "Innovation"],
   },
@@ -35,7 +35,7 @@ const friendsData = [
     name: "Ryan Yang",
     description:
       "Physics and Computer Science student at Stanford University. Working on quantum computing research and theoretical physics applications.",
-    website: "https://ryanyang.dev",
+    website: "https://ryanyunruiyang.github.io/",
     image: "/placeholder.svg?height=200&width=200",
     skills: ["Physics", "Quantum Computing", "Computer Science", "Research"],
   },
@@ -45,6 +45,15 @@ const friendsData = [
     description:
       "Chemical Engineering student at Caltech with interests in sustainable energy and environmental engineering solutions.",
     website: "https://michaelkorvyakov.com",
+    image: "/placeholder.svg?height=200&width=200",
+    skills: ["Chemical Engineering", "Sustainability", "Environmental Science", "Innovation"],
+  },
+  {
+    id: 6,
+    name: "Joseph Cheng",
+    description:
+      "Mathematics and Computer Science student at NYU Courant.",
+    website: "https://www.josephxcheng.com/",
     image: "/placeholder.svg?height=200&width=200",
     skills: ["Chemical Engineering", "Sustainability", "Environmental Science", "Innovation"],
   },
