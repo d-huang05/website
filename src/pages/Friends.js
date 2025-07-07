@@ -9,7 +9,7 @@ const friendsData = [
     description:
       "Computer Science student at MIT with a passion for AI and machine learning. Currently working on neural network optimization and computer vision projects.",
     website: "https://dudugan.github.io",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/friends/david.jpg",
     skills: ["Machine Learning", "Computer Vision", "Python", "Research"],
   },
   {
@@ -18,7 +18,7 @@ const friendsData = [
     description:
       "Economics and Mathematics double major at Harvard University. Interested in quantitative finance and economic modeling with a focus on market analysis.",
     website: "https://iamsrao.com/",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/friends/sid.jpg",
     skills: ["Economics", "Mathematics", "Finance", "Data Analysis"],
   },
   {
@@ -27,7 +27,7 @@ const friendsData = [
     description:
       "Biomedical Engineering student at Johns Hopkins University. Researching medical device innovation and tissue engineering applications.",
     website: "https://jewonim.com/",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/friends/jewon.jpg",
     skills: ["Biomedical Engineering", "Research", "Medical Devices", "Innovation"],
   },
   {
@@ -36,7 +36,7 @@ const friendsData = [
     description:
       "Physics and Computer Science student at Stanford University. Working on quantum computing research and theoretical physics applications.",
     website: "https://ryanyunruiyang.github.io/",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/friends/ryan.jpg",
     skills: ["Physics", "Quantum Computing", "Computer Science", "Research"],
   },
   {
@@ -45,7 +45,7 @@ const friendsData = [
     description:
       "Chemical Engineering student at Caltech with interests in sustainable energy and environmental engineering solutions.",
     website: "https://michaelkorvyakov.com",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/friends/michael.jpg",
     skills: ["Chemical Engineering", "Sustainability", "Environmental Science", "Innovation"],
   },
   {
@@ -54,7 +54,7 @@ const friendsData = [
     description:
       "Mathematics and Computer Science student at NYU Courant.",
     website: "https://www.josephxcheng.com/",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/friends/joe.jpg",
     skills: ["Chemical Engineering", "Sustainability", "Environmental Science", "Innovation"],
   },
 ]
