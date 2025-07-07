@@ -2,6 +2,8 @@ import Header from "../components/Header"
 import About from "../components/About"
 import Publications from "../components/Publications"
 import Contact from "../components/Contact"
+import SocialLinks from "../components/SocialLinks"
+import ResumeDownloads from "../components/ResumeDownloads"
 import Navigation from "../components/Navigation"
 
 function Home() {
@@ -22,6 +24,8 @@ function Home() {
         <About />
         <Publications />
         <Contact />
+        <SocialLinks />
+        <ResumeDownloads />
       </div>
     </div>
   )

@@ -14,7 +14,7 @@ function Header() {
 
           {/* Subtitle with typing animation effect */}
           <div className="text-xl md:text-2xl text-cyan-300 font-mono">
-            <span className="border-r-2 border-cyan-400 animate-pulse">NYU Biochemistry Student</span>
+            <span className="animate-pulse">NYU Biochemistry Student</span>
           </div>
 
           {/* Academic details */}

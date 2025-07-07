@@ -28,10 +28,10 @@ function Contact() {
               <div className="flex items-center justify-center gap-4 p-6 bg-gradient-to-r from-cyan-500 to-blue-500 bg-opacity-10 rounded-lg border border-cyan-500 border-opacity-20">
                 <Mail className="w-6 h-6 text-cyan-400" />
                 <a
-                  href="mailto:deven.huang@nyu.edu"
+                  href="mailto:d.huang@nyu.edu"
                   className="text-xl md:text-2xl text-cyan-300 hover:text-cyan-100 transition-colors duration-300 font-mono"
                 >
-                  deven.huang@nyu.edu
+                  d.huang@nyu.edu
                 </a>
               </div>
 

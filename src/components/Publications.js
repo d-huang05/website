@@ -16,7 +16,8 @@ const publicationsData = [
     type: "Case Report",
     description:
       "Novel surgical technique for correcting severe scleral-fixated intraocular lens tilt using transsulcus retention sutures.",
-    pdfUrl: "#", // You'll need to add the actual PDF URLs
+    pdfUrl:
+      "https://journals.lww.com/jcrs/fulltext/2025/13000/management_of_severe_intraocular_lens_tilt_using.167.aspx",
     preview:
       "This study presents a novel surgical technique using transsulcus retention sutures to treat severe intraocular lens tilt in patients lacking capsular support...",
   },
@@ -33,7 +34,7 @@ const publicationsData = [
     type: "Research Article",
     description:
       "Analysis of healthcare disparities in diabetic retinopathy patients across racial and socioeconomic lines.",
-    pdfUrl: "#",
+    pdfUrl: "https://doi.org/10.11648/j.ijovs.20240903.11",
     preview:
       "This research demonstrates significant healthcare disparities in diabetic retinopathy presentation and outcomes across racial and socioeconomic groups...",
   },
@@ -49,7 +50,7 @@ const publicationsData = [
     type: "Research Article",
     description:
       "Retrospective analysis of 511 patients examining ethnic and socioeconomic disparities in diabetic retinopathy severity.",
-    pdfUrl: "#",
+    pdfUrl: "https://www.ecronicon.com/ecop/pdf/ECOP-14-00167.pdf",
     preview:
       "A comprehensive study of 511 patients revealing that Black/African American and Hispanic patients present with more severe diabetic retinopathy...",
   },
@@ -65,7 +66,7 @@ const publicationsData = [
     type: "Review Article",
     description:
       "Comprehensive review of innate immune system involvement in age-related macular degeneration pathophysiology.",
-    pdfUrl: "#",
+    pdfUrl: "https://doi.org/10.3389/fcell.2023.1118524",
     preview:
       "This review discusses the role of the innate immune system in AMD, exploring complement activation, microglial involvement, and therapeutic targets...",
   },
@@ -80,7 +81,7 @@ const publicationsData = [
     doi: "",
     type: "Survey Study",
     description: "Survey analysis of COVID-19's impact on retina practices and patient care delays.",
-    pdfUrl: "#",
+    pdfUrl: "https://retinatoday.com/articles/2020-jul-aug/effects-of-covid-19-on-retina-practices-and-patients",
     preview:
       "Survey of retina specialists revealing significant impacts of COVID-19 on practice volumes and patient outcomes due to delayed treatments...",
   },

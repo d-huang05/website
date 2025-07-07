@@ -32,6 +32,26 @@ function Navigation() {
             >
               Experiences
             </Link>
+            <Link
+              to="/friends"
+              className={`font-mono transition-colors duration-300 ${
+                location.pathname === "/friends"
+                  ? "text-cyan-400 border-b border-cyan-400"
+                  : "text-gray-300 hover:text-cyan-300"
+              }`}
+            >
+              Friends
+            </Link>
+            <Link
+              to="/media"
+              className={`font-mono transition-colors duration-300 ${
+                location.pathname === "/media"
+                  ? "text-cyan-400 border-b border-cyan-400"
+                  : "text-gray-300 hover:text-cyan-300"
+              }`}
+            >
+              Media
+            </Link>
           </div>
         </div>
       </div>

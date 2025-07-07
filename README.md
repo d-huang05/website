@@ -1,70 +1,178 @@
-# Getting Started with Create React App
+# Public Assets Folder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This folder contains static assets that will be served directly by your web server.
 
-## Available Scripts
+## Folder Structure
 
-In the project directory, you can run:
+### Documents
+- `resume.pdf` - Your professional resume (upload your actual resume here)
+- `cv.pdf` - Your full curriculum vitae (upload your actual CV here)
 
-### `npm start`
+### Media Images
+Upload your media images to the following folders:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### General Media (for "My Musts" section)
+- `images/media/` - Main media images
+  - `the-godfather.jpg`
+  - `breaking-bad.jpg`
+  - `1984.jpg`
+  - `the-last-of-us.jpg`
+  - `kurzgesagt.jpg`
+  - `pulp-fiction.jpg`
+  - `the-wire.jpg`
+  - `to-kill-a-mockingbird.jpg`
+  - `red-dead-redemption-2.jpg`
+  - `veritasium.jpg`
+  - `shawshank-redemption.jpg`
+  - `true-detective.jpg`
+  - `sapiens.jpg`
+  - `god-of-war.jpg`
+  - `3blue1brown.jpg`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Books
+- `images/media/books/`
+  - `1984.jpg`
+  - `to-kill-a-mockingbird.jpg`
+  - `sapiens.jpg`
+  - `dune.jpg`
+  - `great-gatsby.jpg`
+  - `brave-new-world.jpg`
 
-### `npm test`
+#### Movies
+- `images/media/movies/`
+  - `the-godfather.jpg`
+  - `pulp-fiction.jpg`
+  - `shawshank-redemption.jpg`
+  - `goodfellas.jpg`
+  - `citizen-kane.jpg`
+  - `casablanca.jpg`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Video Games
+- `images/media/games/`
+  - `the-last-of-us.jpg`
+  - `red-dead-redemption-2.jpg`
+  - `god-of-war.jpg`
+  - `witcher-3.jpg`
+  - `hades.jpg`
+  - `celeste.jpg`
 
-### `npm run build`
+#### TV Series
+- `images/media/tv/`
+  - `breaking-bad.jpg`
+  - `the-wire.jpg`
+  - `true-detective.jpg`
+  - `the-sopranos.jpg`
+  - `mad-men.jpg`
+  - `fargo.jpg`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### YouTube Channels
+- `images/media/youtube/`
+  - `kurzgesagt.jpg`
+  - `veritasium.jpg`
+  - `3blue1brown.jpg`
+  - `cgp-grey.jpg`
+  - `ted-ed.jpg`
+  - `crash-course.jpg`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Image Guidelines
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Format**: JPG or PNG recommended
+- **Size**: Recommended dimensions are 300x400 pixels (3:4 aspect ratio)
+- **Quality**: High quality images for best display
+- **Naming**: Use lowercase letters and hyphens for file names
 
-### `npm run eject`
+## Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- If an image fails to load, the system will automatically fall back to a placeholder
+- Make sure file names match exactly what's specified in the code
+- All images should be optimized for web use to ensure fast loading times
+\`\`\`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```text file="public/images/media/README.md"
+# Media Images
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Place your media cover images in this folder and its subfolders.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Folder Structure:
+- `/` - Main media images for "My Musts" section
+- `books/` - Book cover images
+- `movies/` - Movie poster images  
+- `games/` - Video game cover art
+- `tv/` - TV series poster images
+- `youtube/` - YouTube channel logos/thumbnails
 
-## Learn More
+## Image Requirements:
+- Format: JPG or PNG
+- Aspect Ratio: 3:4 (portrait orientation)
+- Recommended Size: 300x400 pixels
+- File naming: Use lowercase and hyphens (e.g., "the-godfather.jpg")
+\`\`\`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```text file="public/images/media/books/README.md"
+# Book Cover Images
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Place book cover images in this folder.
 
-### Code Splitting
+Required images:
+- 1984.jpg
+- to-kill-a-mockingbird.jpg
+- sapiens.jpg
+- dune.jpg
+- great-gatsby.jpg
+- brave-new-world.jpg
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```text file="public/images/media/movies/README.md"
+# Movie Poster Images
 
-### Analyzing the Bundle Size
+Place movie poster images in this folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Required images:
+- the-godfather.jpg
+- pulp-fiction.jpg
+- shawshank-redemption.jpg
+- goodfellas.jpg
+- citizen-kane.jpg
+- casablanca.jpg
+\`\`\`
 
-### Making a Progressive Web App
+```text file="public/images/media/games/README.md"
+# Video Game Cover Images
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Place video game cover art in this folder.
 
-### Advanced Configuration
+Required images:
+- the-last-of-us.jpg
+- red-dead-redemption-2.jpg
+- god-of-war.jpg
+- witcher-3.jpg
+- hades.jpg
+- celeste.jpg
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```text file="public/images/media/tv/README.md"
+# TV Series Poster Images
 
-### Deployment
+Place TV series poster images in this folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Required images:
+- breaking-bad.jpg
+- the-wire.jpg
+- true-detective.jpg
+- the-sopranos.jpg
+- mad-men.jpg
+- fargo.jpg
+\`\`\`
 
-### `npm run build` fails to minify
+```text file="public/images/media/youtube/README.md"
+# YouTube Channel Images
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Place YouTube channel logos/thumbnails in this folder.
+
+Required images:
+- kurzgesagt.jpg
+- veritasium.jpg
+- 3blue1brown.jpg
+- cgp-grey.jpg
+- ted-ed.jpg
+- crash-course.jpg
