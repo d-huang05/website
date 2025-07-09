@@ -1,40 +1,56 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ChevronUp, ChevronDown, ArrowLeft } from "lucide-react"
+import { ChevronUp, ChevronDown, ArrowLeft, Eye, TrendingUp, Microscope, Users, Shield, Briefcase } from "lucide-react"
 import { Link } from "react-router-dom"
 import Navigation from "../components/Navigation"
+import TronLines from "../components/TronLines"
 
 const experiencesData = [
   {
     id: 1,
+    title: "Ophthalmic Technician",
+    company: "Union Square Eye Care",
+    location: "New York, NY",
+    period: "January 2025 - Present",
+    type: "Current Position",
+    icon: Eye,
+    description:
+      "Providing comprehensive ophthalmic technical support including patient care, diagnostic testing, and clinical assistance in a busy eye care practice.",
+    skills: ["Ophthalmic Testing", "Patient Care", "Clinical Support", "Diagnostic Equipment", "Medical Documentation"],
+  },
+  {
+    id: 2,
     title: "Quantitative Finance Team Member",
     company: "Stern Business Analytics Club",
     location: "New York, NY",
     period: "February 2025 - Present",
     type: "Current Position",
+    icon: TrendingUp,
     description:
       "Member of the quantitative finance team, applying analytical skills to financial modeling and data analysis.",
     skills: ["Quantitative Analysis", "Financial Modeling", "Data Analysis"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Research Assistant",
     company: "Marcus Weck Lab at New York University",
     location: "New York, NY",
     period: "February 2025 - Present",
     type: "Research",
+    icon: Microscope,
     description:
       "Conducting cutting-edge research in biochemistry and molecular biology under Dr. Marcus Weck's supervision.",
     skills: ["Biochemistry", "Molecular Biology", "Research Methods"],
   },
   {
-    id: 3,
+    id: 4,
     title: "College Leader",
     company: "NYU College of Arts and Science",
     location: "New York, NY",
     period: "May 2024 – Present",
     type: "Leadership",
+    icon: Users,
     description:
       "Serve as role model and mentor for incoming first-years. Collaborated with CAS professional advisor to facilitate weekly courses and mentored a cohort of 35 first-year students.",
     skills: ["Mentorship", "Leadership", "Community Building", "Academic Support"],
@@ -45,22 +61,24 @@ const experiencesData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Lifeguard and Swim Instructor",
     company: "Jewish Community Center of Greater New Haven",
     location: "Woodbridge, CT",
     period: "June 2024 – August 2024",
     type: "Summer Position",
+    icon: Shield,
     description: "Ensured water safety and provided swimming instruction to community members of all ages.",
     skills: ["Water Safety", "CPR/AED", "Instruction", "Emergency Response"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Project Manager Intern",
     company: "SenseTime SmartLife Solutions",
     location: "Abu Dhabi, UAE",
     period: "June 2023",
     type: "Internship",
+    icon: Briefcase,
     description:
       "Managed AI-powered imaging services for 4 amusement parks and Qasr Al Watan. Coordinated team of 10 members and produced 5 Standard Operating Procedures.",
     skills: ["Project Management", "AI Technology", "Team Leadership", "Process Documentation"],
@@ -71,12 +89,13 @@ const experiencesData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Research Assistant",
     company: "Brian Hafler Lab at Yale School of Medicine",
     location: "New Haven, CT",
     period: "June 2021 – August 2024",
     type: "Research",
+    icon: Microscope,
     description:
       "Performed biochemical and molecular biology procedures investigating high-impact ocular diseases. Specialized in Age-Related Macular Degeneration research and COVID-19 retinal effects.",
     skills: [
@@ -94,12 +113,13 @@ const experiencesData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Ophthalmic Photographer",
     company: "New England Retina Associates",
     location: "Hamden, CT",
     period: "June 2020 – August 2021",
     type: "Clinical",
+    icon: Eye,
     description:
       "Served over 50 patients daily, performed 100+ OCT scans daily using high-tech imaging machines for retinal diagnosis and treatment assistance.",
     skills: [
@@ -180,10 +200,10 @@ function Experiences() {
         behavior: "smooth",
       })
 
-      // Reset scrolling flag after animation
+      // Reduced timeout for faster response
       setTimeout(() => {
         setIsScrolling(false)
-      }, 1000)
+      }, 300)
     }
   }
 
@@ -224,8 +244,7 @@ function Experiences() {
 
       {/* Animated background elements */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/6 w-96 h-96 bg-cyan-500 opacity-5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/6 w-96 h-96 bg-blue-500 opacity-5 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        <TronLines />
       </div>
 
       <div className="relative z-10">
@@ -281,79 +300,94 @@ function Experiences() {
 
             {/* Timeline Items */}
             <div className="space-y-16">
-              {experiencesData.map((experience, index) => (
-                <div
-                  key={experience.id}
-                  ref={(el) => (timelineRefs.current[index] = el)}
-                  className="relative transition-all duration-700 ease-out min-h-96 flex items-center py-8"
-                  style={{
-                    opacity: getItemOpacity(index),
-                    transform: `scale(${getItemScale(index)})`,
-                    filter: `blur(${getItemBlur(index)}px)`,
-                  }}
-                >
-                  {/* Content card */}
-                  <div className={`relative w-full ${index % 2 === 0 ? "pr-1/2 mr-8" : "pl-1/2 ml-8"}`}>
-                    <div className="relative">
-                      {/* Card glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-20 rounded-lg blur-sm"></div>
+              {experiencesData.map((experience, index) => {
+                const IconComponent = experience.icon
+                return (
+                  <div
+                    key={experience.id}
+                    ref={(el) => (timelineRefs.current[index] = el)}
+                    className="relative transition-all duration-500 ease-out min-h-96 flex items-center py-8"
+                    style={{
+                      opacity: getItemOpacity(index),
+                      transform: `scale(${getItemScale(index)})`,
+                      filter: `blur(${getItemBlur(index)}px)`,
+                    }}
+                  >
+                    {/* Content card */}
+                    <div className={`relative w-full ${index % 2 === 0 ? "pr-1/2 mr-8" : "pl-1/2 ml-8"}`}>
+                      <div className="relative">
+                        {/* Card glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-20 rounded-lg blur-sm"></div>
 
-                      <div className="relative bg-black bg-opacity-90 backdrop-blur-sm border border-cyan-500 border-opacity-30 rounded-lg p-6 md:p-8">
-                        {/* Type badge */}
-                        <div className="inline-block px-3 py-1 bg-cyan-500 bg-opacity-20 border border-cyan-400 border-opacity-50 rounded-full text-cyan-300 text-sm font-mono mb-4">
-                          {experience.type}
-                        </div>
+                        <div className="relative bg-black bg-opacity-90 backdrop-blur-sm border border-cyan-500 border-opacity-30 rounded-lg p-6 md:p-8">
+                          {/* Header section with icon */}
+                          <div className="flex items-start justify-between mb-4">
+                            <div className="flex-1">
+                              {/* Type badge */}
+                              <div className="inline-block px-3 py-1 bg-cyan-500 bg-opacity-20 border border-cyan-400 border-opacity-50 rounded-full text-cyan-300 text-sm font-mono mb-4">
+                                {experience.type}
+                              </div>
 
-                        {/* Title and company */}
-                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{experience.title}</h3>
-                        <h4 className="text-lg text-cyan-300 mb-2">{experience.company}</h4>
+                              {/* Title and company */}
+                              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{experience.title}</h3>
+                              <h4 className="text-lg text-cyan-300 mb-2">{experience.company}</h4>
 
-                        {/* Location and period */}
-                        <div className="flex flex-col md:flex-row md:items-center gap-2 text-blue-200 mb-4">
-                          <span>{experience.location}</span>
-                          <span className="hidden md:block">•</span>
-                          <span className="font-mono">{experience.period}</span>
-                        </div>
+                              {/* Location and period */}
+                              <div className="flex flex-col md:flex-row md:items-center gap-2 text-blue-200">
+                                <span>{experience.location}</span>
+                                <span className="hidden md:block">•</span>
+                                <span className="font-mono">{experience.period}</span>
+                              </div>
+                            </div>
 
-                        {/* Description */}
-                        <p className="text-gray-300 leading-relaxed mb-4">{experience.description}</p>
-
-                        {/* Achievements */}
-                        {experience.achievements && (
-                          <div className="mb-4">
-                            <h5 className="text-cyan-400 font-semibold mb-2">Key Achievements:</h5>
-                            <ul className="list-disc list-inside text-gray-300 space-y-1">
-                              {experience.achievements.map((achievement, i) => (
-                                <li key={i} className="text-sm">
-                                  {achievement}
-                                </li>
-                              ))}
-                            </ul>
+                            {/* Role Icon */}
+                            <div className="ml-6 flex-shrink-0">
+                              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 bg-opacity-20 rounded-lg border border-cyan-400 border-opacity-30 flex items-center justify-center">
+                                <IconComponent className="w-8 h-8 text-cyan-400" />
+                              </div>
+                            </div>
                           </div>
-                        )}
 
-                        {/* Skills */}
-                        <div className="flex flex-wrap gap-2">
-                          {experience.skills.map((skill, i) => (
-                            <span
-                              key={i}
-                              className="px-2 py-1 bg-blue-500 bg-opacity-20 border border-blue-400 border-opacity-30 rounded text-blue-300 text-xs"
-                            >
-                              {skill}
-                            </span>
-                          ))}
+                          {/* Description */}
+                          <p className="text-gray-300 leading-relaxed mb-4">{experience.description}</p>
+
+                          {/* Achievements */}
+                          {experience.achievements && (
+                            <div className="mb-4">
+                              <h5 className="text-cyan-400 font-semibold mb-2">Key Achievements:</h5>
+                              <ul className="list-disc list-inside text-gray-300 space-y-1">
+                                {experience.achievements.map((achievement, i) => (
+                                  <li key={i} className="text-sm">
+                                    {achievement}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {/* Skills */}
+                          <div className="flex flex-wrap gap-2">
+                            {experience.skills.map((skill, i) => (
+                              <span
+                                key={i}
+                                className="px-2 py-1 bg-blue-500 bg-opacity-20 border border-blue-400 border-opacity-30 rounded text-blue-300 text-xs"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Decorative corners */}
+                          <div className="absolute top-4 left-4 w-3 h-3 border-l-2 border-t-2 border-cyan-400"></div>
+                          <div className="absolute top-4 right-4 w-3 h-3 border-r-2 border-t-2 border-cyan-400"></div>
+                          <div className="absolute bottom-4 left-4 w-3 h-3 border-l-2 border-b-2 border-cyan-400"></div>
+                          <div className="absolute bottom-4 right-4 w-3 h-3 border-r-2 border-b-2 border-cyan-400"></div>
                         </div>
-
-                        {/* Decorative corners */}
-                        <div className="absolute top-4 left-4 w-3 h-3 border-l-2 border-t-2 border-cyan-400"></div>
-                        <div className="absolute top-4 right-4 w-3 h-3 border-r-2 border-t-2 border-cyan-400"></div>
-                        <div className="absolute bottom-4 left-4 w-3 h-3 border-l-2 border-b-2 border-cyan-400"></div>
-                        <div className="absolute bottom-4 right-4 w-3 h-3 border-r-2 border-b-2 border-cyan-400"></div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 

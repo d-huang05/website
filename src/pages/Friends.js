@@ -1,6 +1,7 @@
 import { ExternalLink, ArrowLeft } from "lucide-react"
 import { Link } from "react-router-dom"
 import Navigation from "../components/Navigation"
+import OrbitingLights from "../components/OrbitingLights"
 
 const friendsData = [
   {
@@ -51,11 +52,10 @@ const friendsData = [
   {
     id: 6,
     name: "Joseph Cheng",
-    description:
-      "Mathematics and Computer Science student at NYU Courant.",
+    description: "Mathematics and Computer Science student at NYU Courant.",
     website: "https://www.josephxcheng.com/",
     image: "/images/friends/joe.jpg",
-    skills: ["Chemical Engineering", "Sustainability", "Environmental Science", "Innovation"],
+    skills: ["Mathematics", "Computer Science", "Academic Research", "Problem Solving"],
   },
 ]
 
@@ -65,10 +65,9 @@ function Friends() {
       {/* Grid background pattern */}
       <div className="fixed inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
 
-      {/* Animated background elements */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-cyan-500 opacity-5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-blue-500 opacity-5 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+      {/* Animated background elements - Orbiting Lights */}
+      <div className="absolute inset-0 overflow-hidden">
+        <OrbitingLights />
       </div>
 
       <div className="relative z-10">
