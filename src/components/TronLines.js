@@ -1,106 +1,162 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 
 function TronLines() {
   const [lines, setLines] = useState([])
-  const [screenWidth, setScreenWidth] = useState(0)
-  const [screenHeight, setScreenHeight] = useState(0)
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+  const animationRef = useRef()
+  const linesRef = useRef([])
+  const lastTimeRef = useRef(0)
 
-  useEffect(() => {
-    // Set initial screen dimensions
-    setScreenWidth(window.innerWidth)
-    setScreenHeight(window.innerHeight)
+  // Generate a single line path
+  const generatePath = useCallback((startX, screenHeight) => {
+    let currentX = startX
+    let currentY = -300
+    let path = `M ${currentX} ${currentY}`
 
-    const generateLines = () => {
-      const newLines = []
-      // Responsive line count: 7 on desktop, 4 on mobile
-      const numLines = window.innerWidth >= 768 ? 7 : 4
-      const minSpacing = window.innerWidth / (numLines + 1)
+    const totalDistance = screenHeight + 600
+    let distanceCovered = 0
+    const segmentLength = 60
 
-      for (let i = 0; i < numLines; i++) {
-        const startX = (i + 1) * minSpacing + (Math.random() - 0.5) * 80
-        const path = generatePath(startX, window.innerHeight)
-        const color = Math.random() > 0.5 ? "cyan" : "blue"
-        const opacity = 0.4 + Math.random() * 0.3
-        const speed = 0.8 + Math.random() * 0.4
-        // Ensure some lines start immediately, others staggered naturally
-        const animationDelay = i * 1.5 // Reduced delay, more predictable staggering
+    while (distanceCovered < totalDistance) {
+      const shouldTurn = Math.random() < 0.15 && distanceCovered > 100
 
-        newLines.push({
-          id: `line-${i}-${Date.now()}`,
-          path,
-          color,
-          opacity,
-          speed,
-          animationDelay,
-          lineLength: 200,
-        })
-      }
-      setLines(newLines)
-    }
+      if (shouldTurn) {
+        const turnSegments = Math.random() > 0.5 ? 1 : 2
+        const direction = Math.random() > 0.5 ? 1 : -1
 
-    const generatePath = (startX, screenHeight) => {
-      let currentX = startX
-      let currentY = -300
-      let path = `M ${currentX} ${currentY}`
+        for (let i = 0; i < turnSegments; i++) {
+          const deltaX = direction * segmentLength * 0.7071
+          const deltaY = segmentLength * 0.7071
 
-      const totalDistance = screenHeight + 600
-      let distanceCovered = 0
-      const segmentLength = 60
-
-      while (distanceCovered < totalDistance) {
-        const shouldTurn = Math.random() < 0.15 && distanceCovered > 100
-
-        if (shouldTurn) {
-          const turnSegments = Math.random() > 0.5 ? 1 : 2
-          const direction = Math.random() > 0.5 ? 1 : -1
-
-          for (let i = 0; i < turnSegments; i++) {
-            const deltaX = direction * segmentLength * 0.7071
-            const deltaY = segmentLength * 0.7071
-
-            currentX += deltaX
-            currentY += deltaY
-            distanceCovered += segmentLength
-
-            if (currentX < -100) {
-              currentX = -100
-            } else if (currentX > window.innerWidth + 100) {
-              currentX = window.innerWidth + 100
-            }
-
-            path += ` L ${currentX} ${currentY}`
-
-            if (distanceCovered >= totalDistance) break
-          }
-        } else {
-          currentY += segmentLength
+          currentX += deltaX
+          currentY += deltaY
           distanceCovered += segmentLength
-          path += ` L ${currentX} ${currentY}`
-        }
-      }
 
-      return path
+          // Keep lines within reasonable bounds
+          currentX = Math.max(-100, Math.min(window.innerWidth + 100, currentX))
+
+          path += ` L ${currentX} ${currentY}`
+
+          if (distanceCovered >= totalDistance) break
+        }
+      } else {
+        currentY += segmentLength
+        distanceCovered += segmentLength
+        path += ` L ${currentX} ${currentY}`
+      }
     }
 
-    generateLines()
+    return path
+  }, [])
 
+  // Generate all lines
+  const generateLines = useCallback(() => {
+    const width = window.innerWidth
+    const height = window.innerHeight
+
+    setDimensions({ width, height })
+
+    const newLines = []
+    const numLines = width >= 768 ? 7 : 4
+    const minSpacing = width / (numLines + 1)
+
+    for (let i = 0; i < numLines; i++) {
+      const startX = (i + 1) * minSpacing + (Math.random() - 0.5) * 80
+      const path = generatePath(startX, height)
+      const color = Math.random() > 0.5 ? "cyan" : "blue"
+      const opacity = 0.4 + Math.random() * 0.3
+      const speed = 0.8 + Math.random() * 0.4
+      const position = -200 - i * 100 // Stagger initial positions
+
+      newLines.push({
+        id: `line-${i}-${Date.now()}`,
+        path,
+        color,
+        opacity,
+        speed,
+        position,
+        lineLength: 200,
+      })
+    }
+
+    linesRef.current = newLines
+    setLines(newLines)
+  }, [generatePath])
+
+  // Animation loop using requestAnimationFrame
+  const animate = useCallback(
+    (currentTime) => {
+      if (lastTimeRef.current === 0) {
+        lastTimeRef.current = currentTime
+      }
+
+      const deltaTime = currentTime - lastTimeRef.current
+      lastTimeRef.current = currentTime
+
+      // Update line positions
+      const updatedLines = linesRef.current.map((line) => {
+        let newPosition = line.position + line.speed * deltaTime * 0.1
+
+        // Reset line when it goes off screen
+        if (newPosition > dimensions.height + 400) {
+          newPosition = -400 - Math.random() * 200
+        }
+
+        return {
+          ...line,
+          position: newPosition,
+        }
+      })
+
+      linesRef.current = updatedLines
+      setLines([...updatedLines])
+
+      animationRef.current = requestAnimationFrame(animate)
+    },
+    [dimensions.height],
+  )
+
+  // Initialize and handle resize
+  useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerWidth)
-      setScreenHeight(window.innerHeight)
       generateLines()
     }
+
+    // Initial setup
+    if (typeof window !== "undefined") {
+      generateLines()
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
     window.addEventListener("resize", handleResize)
 
     return () => {
       window.removeEventListener("resize", handleResize)
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [generateLines, animate])
+
+  // Cleanup animation on unmount
+  useEffect(() => {
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
     }
   }, [])
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <svg
+        className="absolute inset-0 w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        style={{ willChange: "transform" }}
+      >
         <defs>
           <linearGradient id="cyanLineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="rgba(6, 182, 212, 0)" />
@@ -116,7 +172,7 @@ function TronLines() {
           </linearGradient>
 
           <filter id="lineGlow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
             <feMerge>
               <feMergeNode in="coloredBlur" />
               <feMergeNode in="SourceGraphic" />
@@ -124,24 +180,15 @@ function TronLines() {
           </filter>
 
           {lines.map((line) => (
-            <mask key={`mask-${line.id}`} id={`lineMask-${line.id}`}>
-              <rect
-                width="100%"
-                height={line.lineLength}
-                fill="white"
-                style={{
-                  // Start the mask off-screen initially to prevent visible lines at top
-                  animation: `moveDown ${13.3 / line.speed}s linear infinite`,
-                  animationDelay: `${line.animationDelay}s`,
-                  transform: "translateY(-400px)", // Start further off-screen
-                }}
-              />
-            </mask>
+            <clipPath key={`clip-${line.id}`} id={`lineClip-${line.id}`}>
+              <rect x="0" y={line.position} width="100%" height={line.lineLength} />
+            </clipPath>
           ))}
         </defs>
 
         {lines.map((line) => (
           <g key={line.id}>
+            {/* Main line with glow */}
             <path
               d={line.path}
               stroke={line.color === "cyan" ? "url(#cyanLineGradient)" : "url(#blueLineGradient)"}
@@ -149,34 +196,26 @@ function TronLines() {
               fill="none"
               opacity={line.opacity}
               filter="url(#lineGlow)"
-              mask={`url(#lineMask-${line.id})`}
+              clipPath={`url(#lineClip-${line.id})`}
+              style={{ willChange: "transform" }}
             />
 
+            {/* Secondary glow effect */}
             <path
               d={line.path}
               stroke={line.color === "cyan" ? "#06b6d4" : "#3b82f6"}
               strokeWidth="1"
               fill="none"
               opacity={line.opacity * 0.3}
-              mask={`url(#lineMask-${line.id})`}
+              clipPath={`url(#lineClip-${line.id})`}
               style={{
                 filter: "blur(1px)",
+                willChange: "transform",
               }}
             />
           </g>
         ))}
       </svg>
-
-      <style jsx>{`
-        @keyframes moveDown {
-          0% {
-            transform: translateY(-400px);
-          }
-          100% {
-            transform: translateY(calc(100vh + 400px));
-          }
-        }
-      `}</style>
     </div>
   )
 }

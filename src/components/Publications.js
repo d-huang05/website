@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
+import { ChevronLeft, ChevronRight, Download } from "lucide-react"
 
 const publicationsData = [
   {
@@ -16,8 +16,8 @@ const publicationsData = [
     type: "Case Report",
     description:
       "Novel surgical technique for correcting severe scleral-fixated intraocular lens tilt using transsulcus retention sutures.",
-    pdfUrl:
-      "https://journals.lww.com/jcrs/fulltext/2025/13000/management_of_severe_intraocular_lens_tilt_using.167.aspx",
+    pdfFile: "/pdfs/huang_cervantes_2025_iol_tilt.pdf",
+    filename: "huang_cervantes_2025_iol_tilt.pdf",
     preview:
       "This study presents a novel surgical technique using transsulcus retention sutures to treat severe intraocular lens tilt in patients lacking capsular support...",
   },
@@ -34,7 +34,8 @@ const publicationsData = [
     type: "Research Article",
     description:
       "Analysis of healthcare disparities in diabetic retinopathy patients across racial and socioeconomic lines.",
-    pdfUrl: "https://doi.org/10.11648/j.ijovs.20240903.11",
+    pdfFile: "/pdfs/huang_et_al_2024_diabetic_retinopathy_disparities.pdf",
+    filename: "huang_et_al_2024_diabetic_retinopathy_disparities.pdf",
     preview:
       "This research demonstrates significant healthcare disparities in diabetic retinopathy presentation and outcomes across racial and socioeconomic groups...",
   },
@@ -50,7 +51,8 @@ const publicationsData = [
     type: "Research Article",
     description:
       "Retrospective analysis of 511 patients examining ethnic and socioeconomic disparities in diabetic retinopathy severity.",
-    pdfUrl: "https://www.ecronicon.com/ecop/pdf/ECOP-14-00167.pdf",
+    pdfFile: "/pdfs/huang_channamsetty_huang_2023_ec_ophthalmology.pdf",
+    filename: "huang_channamsetty_huang_2023_ec_ophthalmology.pdf",
     preview:
       "A comprehensive study of 511 patients revealing that Black/African American and Hispanic patients present with more severe diabetic retinopathy...",
   },
@@ -66,7 +68,8 @@ const publicationsData = [
     type: "Review Article",
     description:
       "Comprehensive review of innate immune system involvement in age-related macular degeneration pathophysiology.",
-    pdfUrl: "https://doi.org/10.3389/fcell.2023.1118524",
+    pdfFile: "/pdfs/ascunce_et_al_2023_amd_innate_immunity.pdf",
+    filename: "ascunce_et_al_2023_amd_innate_immunity.pdf",
     preview:
       "This review discusses the role of the innate immune system in AMD, exploring complement activation, microglial involvement, and therapeutic targets...",
   },
@@ -81,7 +84,8 @@ const publicationsData = [
     doi: "",
     type: "Survey Study",
     description: "Survey analysis of COVID-19's impact on retina practices and patient care delays.",
-    pdfUrl: "https://retinatoday.com/articles/2020-jul-aug/effects-of-covid-19-on-retina-practices-and-patients",
+    pdfFile: "/pdfs/verter_et_al_2020_covid_retina_practices.pdf",
+    filename: "verter_et_al_2020_covid_retina_practices.pdf",
     preview:
       "Survey of retina specialists revealing significant impacts of COVID-19 on practice volumes and patient outcomes due to delayed treatments...",
   },
@@ -100,6 +104,20 @@ function Publications() {
 
   const goToPublication = (index) => {
     setCurrentIndex(index)
+  }
+
+  const downloadPDF = (publication) => {
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement("a")
+    link.href = publication.pdfFile
+    link.download = publication.filename
+    link.target = "_blank"
+    link.rel = "noopener noreferrer"
+
+    // Append to body, click, and remove
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   const getItemPosition = (index) => {
@@ -183,7 +201,7 @@ function Publications() {
                     {/* Preview */}
                     <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">{publication.preview}</p>
 
-                    {/* DOI and PDF link */}
+                    {/* DOI and PDF download */}
                     <div className="flex items-center justify-between">
                       {publication.doi && (
                         <span className="text-xs text-gray-400 font-mono">DOI: {publication.doi}</span>
@@ -191,12 +209,12 @@ function Publications() {
                       <button
                         onClick={(e) => {
                           e.stopPropagation()
-                          window.open(publication.pdfUrl, "_blank")
+                          downloadPDF(publication)
                         }}
-                        className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-sm"
+                        className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-sm bg-cyan-500 bg-opacity-10 hover:bg-opacity-20 px-2 py-1 rounded border border-cyan-500 border-opacity-30 hover:border-opacity-50"
                       >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>View PDF</span>
+                        <Download className="w-4 h-4" />
+                        <span>Download PDF</span>
                       </button>
                     </div>
 
