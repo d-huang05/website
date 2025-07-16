@@ -66,9 +66,9 @@ const myMusts = [
     image: "/images/media/gravity-falls.jpg",
   },
   {
-    title: "The Deadliest Virus on Earth",
+    title: "The (Second) Deadliest Virus",
     type: "YouTube Video",
-    wikipedia: "https://www.youtube.com/watch?v=4u5I8GYB79Y",
+    wikipedia: "https://www.youtube.com/watch?v=Kr57ax0OWMk&t=1s",
     image: "/images/media/variola.jpg",
   },
   {
@@ -99,196 +99,130 @@ const myMusts = [
 
 const books = [
   {
-    title: "1984",
-    author: "George Orwell",
-    wikipedia: "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
-    image: "/images/media/books/1984.jpg",
+    title: "Tuesdays with Morrie",
+    author: "Mitch Albom",
+    wikipedia: "https://en.wikipedia.org/wiki/Tuesdays_with_Morrie",
+    image: "/images/media/tuesdays-with-morrie.jpg",
   },
   {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    wikipedia: "https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird",
-    image: "/images/media/books/to-kill-a-mockingbird.jpg",
+    title: "When Breath Becomes Air",
+    author: "Paul Kalanithi",
+    wikipedia: "https://en.wikipedia.org/wiki/When_Breath_Becomes_Air",
+    image: "/images/media/when-breath-becomes-air.jpg",
   },
   {
-    title: "Sapiens",
-    author: "Yuval Noah Harari",
-    wikipedia: "https://en.wikipedia.org/wiki/Sapiens:_A_Brief_History_of_Humankind",
-    image: "/images/media/books/sapiens.jpg",
-  },
-  {
-    title: "Dune",
-    author: "Frank Herbert",
-    wikipedia: "https://en.wikipedia.org/wiki/Dune_(novel)",
-    image: "/images/media/books/dune.jpg",
-  },
-  {
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    wikipedia: "https://en.wikipedia.org/wiki/The_Great_Gatsby",
-    image: "/images/media/books/great-gatsby.jpg",
-  },
-  {
-    title: "Brave New World",
-    author: "Aldous Huxley",
-    wikipedia: "https://en.wikipedia.org/wiki/Brave_New_World",
-    image: "/images/media/books/brave-new-world.jpg",
-  },
+    title: "The Three-Body Problem",
+    author: "Liu Cixin",
+    wikipedia: "https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)",
+    image: "/images/media/three-body.jpg",
+  }
 ]
 
 const movies = [
   {
-    title: "The Godfather",
-    director: "Francis Ford Coppola",
-    wikipedia: "https://en.wikipedia.org/wiki/The_Godfather",
-    image: "/images/media/movies/the-godfather.jpg",
+    title: "Spirited Away",
+    director: "Hayao Miyazaki",
+    wikipedia: "https://en.wikipedia.org/wiki/Spirited_Away",
+    image: "/images/media/spirited-away.jpg",
   },
   {
-    title: "Pulp Fiction",
-    director: "Quentin Tarantino",
-    wikipedia: "https://en.wikipedia.org/wiki/Pulp_Fiction",
-    image: "/images/media/movies/pulp-fiction.jpg",
+    title: "The Iron Giant",
+    director: "Brad Bird",
+    wikipedia: "https://en.wikipedia.org/wiki/The_Iron_Giant",
+    image: "/images/media/the-iron-giant.jpg",
+  },
+  {
+    title: "How to Train Your Dragon",
+    director: "Dean DeBlois, Chris Sanders",
+    wikipedia: "https://en.wikipedia.org/wiki/How_to_Train_Your_Dragon_(2010_film)",
+    image: "/images/media/httyd.jpg",
   },
   {
     title: "The Shawshank Redemption",
     director: "Frank Darabont",
     wikipedia: "https://en.wikipedia.org/wiki/The_Shawshank_Redemption",
-    image: "/images/media/movies/shawshank-redemption.jpg",
-  },
-  {
-    title: "Goodfellas",
-    director: "Martin Scorsese",
-    wikipedia: "https://en.wikipedia.org/wiki/Goodfellas",
-    image: "/images/media/movies/goodfellas.jpg",
-  },
-  {
-    title: "Citizen Kane",
-    director: "Orson Welles",
-    wikipedia: "https://en.wikipedia.org/wiki/Citizen_Kane",
-    image: "/images/media/movies/citizen-kane.jpg",
-  },
-  {
-    title: "Casablanca",
-    director: "Michael Curtiz",
-    wikipedia: "https://en.wikipedia.org/wiki/Casablanca_(film)",
-    image: "/images/media/movies/casablanca.jpg",
+    image: "/images/media/shawshank-redemption.jpg",
   },
 ]
 
 const videoGames = [
   {
-    title: "The Last of Us",
-    developer: "Naughty Dog",
-    wikipedia: "https://en.wikipedia.org/wiki/The_Last_of_Us",
-    image: "/images/media/games/the-last-of-us.jpg",
+    title: "Hollow Knight",
+    developer: "Team Cherry",
+    wikipedia: "https://en.wikipedia.org/wiki/Hollow_Knight",
+    image: "/images/media/hollow-knight.jpg",
   },
   {
-    title: "Red Dead Redemption 2",
-    developer: "Rockstar Games",
-    wikipedia: "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
-    image: "/images/media/games/red-dead-redemption-2.jpg",
+    title: "Undertale",
+    developer: "Toby Fox",
+    wikipedia: "https://en.wikipedia.org/wiki/Undertale",
+    image: "/images/media/undertale.jpg",
   },
   {
-    title: "God of War",
-    developer: "Santa Monica Studio",
-    wikipedia: "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)",
-    image: "/images/media/games/god-of-war.jpg",
-  },
-  {
-    title: "The Witcher 3",
-    developer: "CD Projekt Red",
-    wikipedia: "https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt",
-    image: "/images/media/games/witcher-3.jpg",
-  },
-  {
-    title: "Hades",
-    developer: "Supergiant Games",
-    wikipedia: "https://en.wikipedia.org/wiki/Hades_(video_game)",
-    image: "/images/media/games/hades.jpg",
-  },
-  {
-    title: "Celeste",
-    developer: "Maddy Makes Games",
-    wikipedia: "https://en.wikipedia.org/wiki/Celeste_(video_game)",
-    image: "/images/media/games/celeste.jpg",
+    title: "Minecraft",
+    developer: "Mojang Studios",
+    wikipedia: "https://en.wikipedia.org/wiki/Minecraft",
+    image: "/images/media/minecraft.jpg",
   },
 ]
 
 const tvSeries = [
   {
-    title: "Breaking Bad",
-    creator: "Vince Gilligan",
-    wikipedia: "https://en.wikipedia.org/wiki/Breaking_Bad",
-    image: "/images/media/tv/breaking-bad.jpg",
+    title: "Avatar: The Last Airbender",
+    creator: "Michael Dante DiMartino, Bryan Konietzko",
+    wikipedia: "https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender",
+    image: "/images/media/atla.jpg",
   },
   {
-    title: "The Wire",
-    creator: "David Simon",
-    wikipedia: "https://en.wikipedia.org/wiki/The_Wire",
-    image: "/images/media/tv/the-wire.jpg",
+    title: "Gravity Falls",
+    creator: "Alex Hirsch",
+    wikipedia: "https://en.wikipedia.org/wiki/Gravity_Falls",
+    image: "/images/media/gravity-falls.jpg",
   },
   {
-    title: "True Detective",
-    creator: "Nic Pizzolatto",
-    wikipedia: "https://en.wikipedia.org/wiki/True_Detective",
-    image: "/images/media/tv/true-detective.jpg",
-  },
-  {
-    title: "The Sopranos",
-    creator: "David Chase",
-    wikipedia: "https://en.wikipedia.org/wiki/The_Sopranos",
-    image: "/images/media/tv/the-sopranos.jpg",
-  },
-  {
-    title: "Mad Men",
-    creator: "Matthew Weiner",
-    wikipedia: "https://en.wikipedia.org/wiki/Mad_Men",
-    image: "/images/media/tv/mad-men.jpg",
-  },
-  {
-    title: "Fargo",
-    creator: "Noah Hawley",
-    wikipedia: "https://en.wikipedia.org/wiki/Fargo_(TV_series)",
-    image: "/images/media/tv/fargo.jpg",
+    title: "Steven Universe",
+    creator: "Rebecca Sugar",
+    wikipedia: "https://en.wikipedia.org/wiki/Steven_Universe",
+    image: "/images/media/steven-universe.jpg",
   },
 ]
 
-const youtubeChannels = [
+const youtubeVideos = [
   {
-    title: "Kurzgesagt",
-    creator: "Kurzgesagt Team",
-    wikipedia: "https://en.wikipedia.org/wiki/Kurzgesagt",
-    image: "/images/media/youtube/kurzgesagt.jpg",
+    title: "The Egg - A Short Story",
+    creator: "Kurzgesagt",
+    wikipedia: "https://www.youtube.com/watch?v=h6fcK_fRYaI",
+    image: "/images/media/the-egg.jpg",
   },
   {
-    title: "Veritasium",
-    creator: "Derek Muller",
-    wikipedia: "https://en.wikipedia.org/wiki/Veritasium",
-    image: "/images/media/youtube/veritasium.jpg",
+    title: "The (Second) Deadliest Virus",
+    creator: "Kurzgesagt",
+    wikipedia: "https://www.youtube.com/watch?v=Kr57ax0OWMk&t=1s",
+    image: "/images/media/variola.jpg",
   },
   {
-    title: "3Blue1Brown",
-    creator: "Grant Sanderson",
-    wikipedia: "https://en.wikipedia.org/wiki/3Blue1Brown",
-    image: "/images/media/youtube/3blue1brown.jpg",
+    title: "The Beauty of Games With Dead Worlds",
+    creator: "Curious Archive",
+    wikipedia: "https://www.youtube.com/watch?v=58lztpgwxuk",
+    image: "/images/media/the-beauty-of-games.jpg",
   },
   {
-    title: "CGP Grey",
-    creator: "CGP Grey",
-    wikipedia: "https://en.wikipedia.org/wiki/CGP_Grey",
-    image: "/images/media/youtube/cgp-grey.jpg",
+    title: "nothing, except everything.",
+    creator: "Wesley Wang",
+    wikipedia: "https://www.youtube.com/watch?v=hif5eI5pBxo",
+    image: "/images/media/nothing-except-everything.jpg",
   },
   {
-    title: "TED-Ed",
-    creator: "TED",
-    wikipedia: "https://en.wikipedia.org/wiki/TED-Ed",
-    image: "/images/media/youtube/ted-ed.jpg",
+    title: "Games that Make You Part of the Ecosystem",
+    creator: "Curious Archive",
+    wikipedia: "https://www.youtube.com/watch?v=ZFBUFFr4GmQ",
+    image: "/images/media/games-ecosystem.jpg",
   },
   {
-    title: "Crash Course",
-    creator: "Hank & John Green",
-    wikipedia: "https://en.wikipedia.org/wiki/Crash_Course_(YouTube)",
-    image: "/images/media/youtube/crash-course.jpg",
+    title: "our conception of love is messed up.",
+    creator: "oliSUNvia",
+    wikipedia: "https://www.youtube.com/watch?v=jcbEiZQ9B7o",
+    image: "/images/media/conception-love.jpg",
   },
 ]
 
@@ -393,7 +327,7 @@ function Media() {
                 </h2>
                 <div className="w-32 h-px bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-6"></div>
                 <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                  The absolute cream of the crop - 15 pieces of media that I consider essential experiences across all
+                  15 pieces of media that I recommend that everyone experiences atleast once, across all
                   categories.
                 </p>
               </div>
@@ -410,7 +344,7 @@ function Media() {
             <MediaCarousel title="MOVIES" items={movies} />
             <MediaCarousel title="VIDEO GAMES" items={videoGames} />
             <MediaCarousel title="TV SERIES" items={tvSeries} />
-            <MediaCarousel title="YOUTUBE CHANNELS" items={youtubeChannels} />
+            <MediaCarousel title="YOUTUBE VIDEOS" items={youtubeVideos} />
           </div>
         </div>
       </div>

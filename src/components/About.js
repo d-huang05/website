@@ -19,20 +19,20 @@ function About() {
           <div className="relative bg-black bg-opacity-80 backdrop-blur-sm border border-cyan-500 border-opacity-30 rounded-lg p-8 md:p-12">
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p className="text-lg md:text-xl">
-                Welcome to my digital space! I'm a passionate biochemistry student at New York University, where I'm
-                exploring the fascinating intersection of molecular science, mathematics, and business innovation.
+                Welcome to my little corner of the internet. I’m a premed student at New 
+                York University, majoring in Biochemistry with minors in Mathematics and 
+                Business Studies. In the medical field, I currently have the most experience 
+                with ophthalmology, specifically retina, but I’m also open to exploring 
+                other specialties as well.
               </p>
 
               <p className="text-lg md:text-xl">
-                My academic journey combines rigorous scientific inquiry with analytical thinking and strategic business
-                acumen. I'm particularly interested in how biochemical research can be translated into real-world
-                applications that benefit society and drive technological advancement.
-              </p>
-
-              <p className="text-lg md:text-xl">
-                Beyond the laboratory and classroom, I'm always eager to connect with fellow researchers, industry
-                professionals, and anyone who shares a passion for science and innovation. This website serves as both
-                my professional portfolio and a window into my interests and aspirations.
+                Outside of the classroom, I keep in shape by running, playing basketball 
+                (and other sports occasionally) and lifting weights. I’m also interested 
+                in illuminating the various ways that disparities arise in our healthcare 
+                system, understanding the vast and varied applications of AI, and fully 
+                realizing how different mediums can used to tell compelling stories. 
+                Feel free to poke around this digital representation of my brain.
               </p>
             </div>
 
