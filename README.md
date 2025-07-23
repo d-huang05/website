@@ -13,21 +13,21 @@ Upload your media images to the following folders:
 
 #### General Media (for "My Musts" section)
 - `images/media/` - Main media images
-  - `the-godfather.jpg`
-  - `breaking-bad.jpg`
-  - `1984.jpg`
-  - `the-last-of-us.jpg`
-  - `kurzgesagt.jpg`
-  - `pulp-fiction.jpg`
-  - `the-wire.jpg`
-  - `to-kill-a-mockingbird.jpg`
-  - `red-dead-redemption-2.jpg`
-  - `veritasium.jpg`
-  - `shawshank-redemption.jpg`
-  - `true-detective.jpg`
-  - `sapiens.jpg`
-  - `god-of-war.jpg`
-  - `3blue1brown.jpg`
+  - `spirited-away.jpg`
+  - `hollow-knight.jpg`
+  - `three-body.jpg`
+  - `tuesdays-with-morrie.jpg`
+  - `the-iron-giant.jpg`
+  - `the-egg.jpg`
+  - `undertale.jpg`
+  - `atla.jpg`
+  - `steven-universe.jpg`
+  - `gravity-falls.jpg`
+  - `variola.jpg`
+  - `the-beauty-of-games.jpg`
+  - `when-breath-becomes-air.jpg`
+  - `httyd.jpg`
+  - `minecraft.jpg`
 
 #### Books
 - `images/media/books/`

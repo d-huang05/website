@@ -20,6 +20,7 @@ const publicationsData = [
     filename: "huang_cervantes_2025_iol_tilt.pdf",
     preview:
       "This study presents a novel surgical technique using transsulcus retention sutures to treat severe intraocular lens tilt in patients lacking capsular support...",
+    websiteUrl: "https://journals.lww.com/jcro/fulltext/2025/01000/management_of_severe_intraocular_lens_tilt_using.26.aspx",
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ const publicationsData = [
     filename: "huang_et_al_2024_diabetic_retinopathy_disparities.pdf",
     preview:
       "This research demonstrates significant healthcare disparities in diabetic retinopathy presentation and outcomes across racial and socioeconomic groups...",
+    websiteUrl: "https://www.sciencepublishinggroup.com/article/10.11648/j.ijovs.20240903.11",
   },
   {
     id: 3,
@@ -55,6 +57,7 @@ const publicationsData = [
     filename: "huang_channamsetty_huang_2023_ec_ophthalmology.pdf",
     preview:
       "A comprehensive study of 511 patients revealing that Black/African American and Hispanic patients present with more severe diabetic retinopathy...",
+    websiteUrl: "https://ecronicon.net/ecop/severe-healthcare-disparities-arise-in-patients-with-diabetic-retinopathy",
   },
   {
     id: 4,
@@ -72,6 +75,7 @@ const publicationsData = [
     filename: "ascunce_et_al_2023_amd_innate_immunity.pdf",
     preview:
       "This review discusses the role of the innate immune system in AMD, exploring complement activation, microglial involvement, and therapeutic targets...",
+    websiteUrl: "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2023.1118524/full",
   },
   {
     id: 5,
@@ -88,6 +92,7 @@ const publicationsData = [
     filename: "verter_et_al_2020_covid_retina_practices.pdf",
     preview:
       "Survey of retina specialists revealing significant impacts of COVID-19 on practice volumes and patient outcomes due to delayed treatments...",
+    websiteUrl: "https://retinatoday.com/articles/2020-july-aug/effects-of-covid-19-on-retina-practices-and-patients",
   },
 ]
 
@@ -120,6 +125,10 @@ function Publications() {
     document.body.removeChild(link)
   }
 
+  const navigateToWebsite = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer")
+  }
+
   const getItemPosition = (index) => {
     const diff = index - currentIndex
     if (diff === 0) return { transform: "translateX(0) scale(1)", zIndex: 30, opacity: 1 }
@@ -146,14 +155,14 @@ function Publications() {
         <div className="relative h-96 md:h-80">
           {/* Navigation arrows */}
           <button
-            onClick={prevPublication}
+            onClick={() => goToPublication((currentIndex - 1 + publicationsData.length) % publicationsData.length)}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 p-3 bg-black bg-opacity-80 border border-cyan-500 border-opacity-30 rounded-lg text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
-            onClick={nextPublication}
+            onClick={() => goToPublication((currentIndex + 1) % publicationsData.length)}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 p-3 bg-black bg-opacity-80 border border-cyan-500 border-opacity-30 rounded-lg text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm"
           >
             <ChevronRight className="w-6 h-6" />
@@ -168,7 +177,7 @@ function Publications() {
                   key={publication.id}
                   className="absolute w-80 md:w-96 transition-all duration-500 ease-in-out cursor-pointer"
                   style={position}
-                  onClick={() => goToPublication(index)}
+                  onClick={() => navigateToWebsite(publication.websiteUrl)}
                 >
                   {/* Card glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 opacity-20 rounded-lg blur-sm"></div>
