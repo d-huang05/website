@@ -8,46 +8,46 @@ const friendsData = [
     id: 1,
     name: "David Garsten",
     description:
-      "Computer Science student at MIT with a passion for AI and machine learning. Currently working on neural network optimization and computer vision projects.",
+      "Computer Science and Linguistics student at Yale.",
     website: "https://dudugan.github.io",
     image: "/images/friends/david.jpg",
-    skills: ["Machine Learning", "Computer Vision", "Python", "Research"],
+    skills: ["Linguistics", "Composing", "Python", "Research"],
   },
   {
     id: 2,
     name: "Sidharth Rao",
     description:
-      "Economics and Mathematics double major at Harvard University. Interested in quantitative finance and economic modeling with a focus on market analysis.",
+      "CS/ECE student at Cornell University. Interested in localization algorithms, control theory, and decentralized robotics.",
     website: "https://iamsrao.com/",
     image: "/images/friends/sid.jpg",
-    skills: ["Economics", "Mathematics", "Finance", "Data Analysis"],
+    skills: ["Robotics", "Engineering", "Coding", "3D-Printing"],
   },
   {
     id: 3,
     name: "Jewon Im",
     description:
-      "Biomedical Engineering student at Johns Hopkins University. Researching medical device innovation and tissue engineering applications.",
+      "Computer Science student at Yale University.",
     website: "https://jewonim.com/",
     image: "/images/friends/jewon.jpg",
-    skills: ["Biomedical Engineering", "Research", "Medical Devices", "Innovation"],
+    skills: ["Coding", "Writing", "Wood Carving", "Writing"],
   },
   {
     id: 4,
     name: "Ryan Yang",
     description:
-      "Physics and Computer Science student at Stanford University. Working on quantum computing research and theoretical physics applications.",
+      "Distributed Learning student at MIT.",
     website: "https://ryanyunruiyang.github.io/",
     image: "/images/friends/ryan.jpg",
-    skills: ["Physics", "Quantum Computing", "Computer Science", "Research"],
+    skills: ["Computer Systems", "Optimization Theory", "Distributed Systems", "Machine Learning"],
   },
   {
     id: 5,
     name: "Michael Korvyakov",
     description:
-      "Chemical Engineering student at Caltech with interests in sustainable energy and environmental engineering solutions.",
+      "Business and Global Affairs & Computer Science student at Georgetown.",
     website: "https://michaelkorvyakov.com",
     image: "/images/friends/michael.jpg",
-    skills: ["Chemical Engineering", "Sustainability", "Environmental Science", "Innovation"],
+    skills: ["Entrepeneurship", "Business", "Politics", "Media"],
   },
   {
     id: 6,
