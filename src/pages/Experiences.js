@@ -36,8 +36,8 @@ const experiencesData = [
     title: "Quantitative Finance Team Member",
     company: "Stern Business Analytics Club",
     location: "New York, NY",
-    period: "February 2025 - Present",
-    type: "Current Position",
+    period: "February 2025 - September 2025",
+    type: "Quant Trading",
     icon: TrendingUp,
     description:
       "Member of the quantitative finance team, applying analytical skills to financial modeling and data analysis.",

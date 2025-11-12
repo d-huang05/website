@@ -17,6 +17,10 @@ function Header() {
             <span className="animate-pulse">NYU Biochemistry Student</span>
           </div>
 
+          <div className="text-xl md:text-2xl text-cyan-300 font-mono">
+            <span className="animate-pulse">Incoming QT Intern at IMC</span>
+          </div>
+
           {/* Academic details */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-blue-200 text-lg">
             <div className="flex items-center gap-2">
