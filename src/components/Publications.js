@@ -99,14 +99,6 @@ const publicationsData = [
 function Publications() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const nextPublication = () => {
-    setCurrentIndex((prev) => (prev + 1) % publicationsData.length)
-  }
-
-  const prevPublication = () => {
-    setCurrentIndex((prev) => (prev - 1 + publicationsData.length) % publicationsData.length)
-  }
-
   const goToPublication = (index) => {
     setCurrentIndex(index)
   }
