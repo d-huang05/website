@@ -9,6 +9,18 @@ import TronLines from "../components/TronLines"
 const experiencesData = [
   {
     id: 1,
+    title: "Machine Learning Analyst",
+    company: "Stern Business Analytics Club",
+    location: "New York, NY",
+    period: "October 2025 - Present",
+    type: "Current Position",
+    icon: TrendingUp,
+    description:
+      "Learning the fundamental concepts of machine learning and its applications in business analytics through hands-on projects and collaboration with peers.",
+    skills: ["Machine Learning", "Programing", "Data Set Processing", "Neural Net Training"],
+  },
+  {
+    id: 2,
     title: "Ophthalmic Technician",
     company: "Union Square Eye Care",
     location: "New York, NY",
@@ -20,7 +32,7 @@ const experiencesData = [
     skills: ["Ophthalmic Testing", "Patient Care", "Clinical Support", "Diagnostic Equipment", "Medical Documentation"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Quantitative Finance Team Member",
     company: "Stern Business Analytics Club",
     location: "New York, NY",
@@ -32,7 +44,7 @@ const experiencesData = [
     skills: ["Quantitative Analysis", "Financial Modeling", "Data Analysis"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Research Assistant",
     company: "Marcus Weck Lab at New York University",
     location: "New York, NY",
@@ -44,7 +56,7 @@ const experiencesData = [
     skills: ["Biochemistry", "Molecular Biology", "Research Methods"],
   },
   {
-    id: 4,
+    id: 5,
     title: "College Leader",
     company: "NYU College of Arts and Science",
     location: "New York, NY",
@@ -61,7 +73,7 @@ const experiencesData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Lifeguard and Swim Instructor",
     company: "Jewish Community Center of Greater New Haven",
     location: "Woodbridge, CT",
@@ -72,7 +84,7 @@ const experiencesData = [
     skills: ["Water Safety", "CPR/AED", "Instruction", "Emergency Response"],
   },
   {
-    id: 6,
+    id: 7,
     title: "Project Manager Intern",
     company: "SenseTime SmartLife Solutions",
     location: "Abu Dhabi, UAE",
@@ -89,7 +101,7 @@ const experiencesData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Research Assistant",
     company: "Brian Hafler Lab at Yale School of Medicine",
     location: "New Haven, CT",
@@ -113,7 +125,7 @@ const experiencesData = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Ophthalmic Photographer",
     company: "New England Retina Associates",
     location: "Hamden, CT",
